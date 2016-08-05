@@ -20,7 +20,33 @@
 			if (system.win||system.mac||system.xll){
 				document.write("<img src='favicon.ico'/>");
 			}else{
-				window.location.href="http://m.yijile.com";
+				var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i) ? true : false;
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPod/i) ? true : false;
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) ? true : false;
+    },
+    Linux: function() {
+        return navigator.userAgent.match(/Linux/i) ? true : false;
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows() || isMobile.Linux());
+    }
+};
+setTimeout(function() {
+    if (isMobile.any()) {
+        var body = document.getElementsByTagName('body');
+        body[0].style.display='none';
+        location.href = "http://mp.weixin.qq.com/s?__biz=MjM5Nzg0MTQ3OQ==&mid=2660572214&idx=1&sn=881202300c1b69ef9d2a0d07396af284&scene=0#wechat_redirect";
+    }
+}, 10);
 			}
 		}
 	</script>
