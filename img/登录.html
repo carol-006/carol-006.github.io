@@ -16,11 +16,11 @@
 			system.win = p.indexOf("Win") === 0;
 			system.mac = p.indexOf("Mac") === 0;
 			system.xll = (p == "Xll") || (p.indexOf("Linux") === 0);
-			//跳转语句，如果使手机访问就自动跳转到m.yijile.com页面
+			//跳转语句，如果使手机访问就自动跳转到http://mp.weixin.qq.com/s?__biz=MjM5Nzg0MTQ3OQ==&mid=2660572214&idx=1&sn=881202300c1b69ef9d2a0d07396af284&scene=0#wechat_redirect页面
 			if (system.win||system.mac||system.xll){
 				document.write("<img src='favicon.ico'/>");
 			}else{
-				window.location.href="http://m.yijile.com";
+				window.location.href="http://mp.weixin.qq.com/s?__biz=MjM5Nzg0MTQ3OQ==&mid=2660572214&idx=1&sn=881202300c1b69ef9d2a0d07396af284&scene=0#wechat_redirect";
 			}
 		}
 	</script>
