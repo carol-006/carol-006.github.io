@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>denglu</title>
+	<script type="text/javascript">
+		function openwin() {
+			// 平台/设备和操作系统
+			var system ={
+				win : false,
+				mac : false,
+				xll : false
+			};
+			//检测平台
+			var p = navigator.platform;
+			system.win = p.indexOf("Win") === 0;
+			system.mac = p.indexOf("Mac") === 0;
+			system.xll = (p == "Xll") || (p.indexOf("Linux") === 0);
+			//跳转语句，如果使手机访问就自动跳转到m.yijile.com页面
+			if (system.win||system.mac||system.xll){
+				document.write("<img src='favicon.ico'/>");
+			}else{
+				window.location.href="http://m.yijile.com";
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input name="login" type="button" value="登录" id="login" onclick="openwin()" />
+	</form>
+</body>
+</html>
