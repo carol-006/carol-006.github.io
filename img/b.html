@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>denglu</title>
+	<script type="text/javascript">
+		function openwin() {
+			var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i) ? true : false;
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i) ? true : false;
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPod/i) ? true : false;
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i) ? true : false;
+    },
+    Linux: function() {
+        return navigator.userAgent.match(/Linux/i) ? true : false;
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows() || isMobile.Linux());
+    }
+};
+setTimeout(function() {
+    if (isMobile.any()) {
+        var body = document.getElementsByTagName('body');
+        body[0].style.display='none';
+        location.href = "http://www.baidu.com";
+    }
+}, 10);
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<input name="login" type="button" value="登录" id="login" onclick="openwin()" />
+	</form>
+</body>
+</html>
